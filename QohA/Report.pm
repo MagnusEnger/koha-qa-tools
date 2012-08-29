@@ -15,11 +15,15 @@ has 'tasks' => (
     default => sub {return {}},
 );
 
-my $RED = "\e[1;31m";
-my $GREEN = "\e[1;32m";
-my $END = "\e[0m";
-our $STATUS_KO = "${RED}FAIL${END}";
-our $STATUS_OK = "${GREEN}OK${END}";
+#my $RED = "\e[1;31m";
+#my $GREEN = "\e[1;32m";
+#my $END = "\e[0m";
+#our $STATUS_KO = "${RED}FAIL${END}";
+#our $STATUS_OK = "${GREEN}OK${END}";
+
+our $STATUS_KO = "FAIL";
+our $STATUS_OK = "OK";
+
 sub add {
     my ($self, $param) = @_;
     my $file = $param->{file};
