@@ -1,6 +1,7 @@
 package QohA::File::Template;
 
 use Modern::Perl;
+
 use Moo;
 
 extends 'QohA::File';
@@ -11,6 +12,12 @@ use File::Spec;
 use QohA::Report;
 use C4::TTParser;
 use Template;
+
+use Smart::Comments  -ENV;
+#### aaa...
+
+
+
 
 has 'pass' => (
     is => 'rw',
@@ -84,10 +91,31 @@ sub check_tt_valid {
         : "";
 }
 
+sub check_valid_template3 {
+    my ($self) = @_;
+    my @errors;
+my @files;
+my $filename = $self->abspath;
+##### aaaaaaaaaa...
+##### $self
+##### aaaaaaaaaa...
+#warn $self->abspath;
+    my @r = qx|perl ./xt/author/valid-templates2.t $filename|;
+
+
+
+    return "@errors";
+}
+
+
+
 sub check_valid_template {
     my ($self) = @_;
     my @errors;
-
+##### aaaaaaaaaa...
+## ### $self
+warn $self->abspath;
+##### aaaaaaaaaa...
     my $template_dir;
     my $include_dir;
 
@@ -121,6 +149,13 @@ sub check_valid_template {
 
     return "@errors";
 }
+
+
+
+
+
+
+
 
 sub check_forbidden_patterns {
     my ($self, $cnt) = @_;

@@ -1,7 +1,7 @@
 package QohA::Git;
 
 use Modern::Perl;
-use Smart::Comments  -ENV, '####';
+#use Smart::Comments  -ENV, '####';
 
 use Moo;
 

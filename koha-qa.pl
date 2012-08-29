@@ -28,7 +28,7 @@ use Getopt::Long;
 use QohA::Git;
 use QohA::Files;
 
-use Smart::Comments  -ENV, '####';
+use Smart::Comments  -ENV;
 # define 'global' vars
 use vars qw /$v $d $c $br $num_of_commits /;
 
